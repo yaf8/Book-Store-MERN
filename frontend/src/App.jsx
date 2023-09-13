@@ -1,13 +1,18 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
+import { Routes, Route } from 'react-router-dom'
+import { Home, CreateBook, DeleteBook, EditBook, ShowBook } from "./pages"
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <h1 className="text-3xl hover:py-2 hover:px-2 font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/books/create" element={<CreateBook />} />
+      <Route path="/books/details/:id" element={<ShowBook />} />
+      <Route path="/books/edit/:id" element={<EditBook />} />
+      <Route path="/books/delete/:id" element={ <DeleteBook />} />
+    </Routes>
   )
 }
 
-export default App
+export default App;
